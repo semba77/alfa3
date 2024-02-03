@@ -1,32 +1,37 @@
 use alfa3;
 
-create table Person(
-	id_p int identity(1,1) primary key,
-	firstname varchar(15) not null,
-	surname varchar(15) not null,
-	birth datetime not null,
-	education_id int not null,
-	residence_id int not null,
+CREATE TABLE Person (
+    id_p INT AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(15) NOT NULL,
+    surname VARCHAR(15) NOT NULL,
+    birth DATETIME NOT NULL,
+    education_id INT NOT NULL,
+    residence_id INT NOT NULL
 );
 
-create table Home(
-	residence_id int identity(1,1) primary key,
-	home_address varchar(25) not null,
-	residence_type int not null
+CREATE TABLE Home (
+    residence_id INT AUTO_INCREMENT PRIMARY KEY,
+    home_address VARCHAR(25) NOT NULL,
+    residence_type INT NOT NULL
 );
 
-create table Education(
-	education_id int identity(1,1) primary key,
-	e_type enum('elementary School','high School','College') not null,
+CREATE TABLE Education (
+    education_id INT AUTO_INCREMENT PRIMARY KEY,
+    e_type ENUM('elementary School', 'high School', 'College') NOT NULL
 );
 
-create table Residence_type(
-	r_type_id int identity(1,1) primary key,
-	r_type ENUM('apartment','house','bungalow',) not null,
+CREATE TABLE Residence_type (
+    r_type_id INT AUTO_INCREMENT PRIMARY KEY,
+    r_type ENUM('apartment', 'house', 'bungalow') NOT NULL
 );
-create table Family_relations(
-	relations_id int identity(1,1) primary key,
-	parent int,
-	child int,
-	sibling int,
+
+CREATE TABLE Family_relations (
+    relations_id INT AUTO_INCREMENT PRIMARY KEY,
+    parent INT,
+    child INT,
+    sibling1 INT,
+    sibling2 INT
+);
+CREATE TABLE Family_re (
+    relations_id INT AUTO_INCREMENT PRIMARY KEY
 );
